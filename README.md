@@ -15,13 +15,17 @@ A comprehensive, full-stack Job Scraper and Portal application designed with mod
     - **Vibrant Blue Theme:** High-contrast professional aesthetic.
     - **Realistic Background:** High-quality professional workspace backdrop.
     - **Glassmorphism Panels:** Modern translucent cards and navigation.
-- **💾 Job Management:** Save your favorite roles for later review and track your submissions.
+- **💾 Distributed Storage:** A hybrid database architecture for maximum performance.
+    - **SQLite:** Handles relational data like Users and Saved Job IDs.
+    - **MongoDB:** Powers the high-speed search and storage for thousands of job listings.
 
 ## 🛠️ Tech Stack
 
 ### Backend
 - **Framework:** Django (Python)
-- **Database:** SQLite (SQL-based storage)
+- **Database (Hybrid):** 
+    - **SQLite:** Standard relational storage for Auth/Users.
+    - **MongoDB:** NoSQL storage for flexible, high-volume job data.
 - **Architecture:** RESTful API with Token Authentication
 - **Scraping Tools:** Python-based custom scraping management commands.
 
@@ -34,32 +38,36 @@ A comprehensive, full-stack Job Scraper and Portal application designed with mod
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 1. Database Prerequisites
+- Ensure **MongoDB** is installed and running locally on the default port `27017`.
+- Default Database Name: `job_scraper_db`
+
+### 2. Clone the Repository
 ```bash
 git clone https://github.com/Mohanapriyap978/Job-Scraper.git
 cd Job-Scraper
 ```
 
-### 2. Backend Setup
+### 3. Backend Setup
 ```bash
 # Activate virtual environment
 .\venv\Scripts\activate
 
-# Install dependencies (Standard Django Setup)
-pip install django djangorestframework django-cors-headers requests beautifulsoup4
+# Install dependencies (Standard Django + MongoDB Setup)
+pip install django djangorestframework django-cors-headers pymongo requests beautifulsoup4
 
-# Run migrations
+# Run migrations (for SQLite components)
 cd backend
 python manage.py migrate
 
-# Seed initial data (optional)
+# Seed initial data (Populates MongoDB)
 python manage.py seed_data
 
 # Start the server
 python manage.py runserver
 ```
 
-### 3. Frontend Setup
+### 4. Frontend Setup
 ```bash
 cd frontend
 npm install
