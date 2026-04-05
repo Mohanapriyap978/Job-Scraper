@@ -3,7 +3,7 @@
 A comprehensive, full-stack Job Scraper and Portal application designed with modern aesthetics and a seamless user experience. This project automates the process of finding and applying for jobs from multiple sources, presenting them in a beautiful, high-end "Glassmorphism" interface.
 
 ![Modern UI Design](https://img.shields.io/badge/UI-Modern%20Glass-3b82f6?style=for-the-badge)
-![Tech Stack](https://img.shields.io/badge/Stack-Django%20%7C%20React-blue?style=for-the-badge)
+![Tech Stack](https://img.shields.io/badge/Stack-Django%20%7C%20React%20%7C%20MongoDB-blue?style=for-the-badge)
 
 ## ✨ Features
 
